@@ -10,6 +10,7 @@ import io.cucumber.java.en.When;
 import org.assertj.core.api.Assertions;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class MonthlySteps {
 
@@ -47,7 +48,8 @@ public class MonthlySteps {
       total = new BigDecimal(body.trim());
     }
 
-    Assertions.assertThat(total).isEqualByComparingTo(BigDecimal.valueOf(expected).setScale(2, BigDecimal.ROUND_HALF_UP));
+    BigDecimal expectedScaled = BigDecimal.valueOf(expected).setScale(2, RoundingMode.HALF_UP);
+    Assertions.assertThat(total).isEqualByComparingTo(expectedScaled);
   }
 
   @When("I request monthly breakdown for month {string}")
