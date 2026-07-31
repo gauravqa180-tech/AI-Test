@@ -62,15 +62,10 @@ mvn test -DbaseUrl=http://localhost:8080 -Dcucumber.filter.tags="@regression and
 
 ## Reports
 
-After execution, Cucumber reports are generated under:
+After execution, Cucumber reports are generated at:
 
-- `target/cucumber-reports/`
-
-If the project is configured to produce an HTML report, it is typically available at:
-
-- `target/cucumber-reports/index.html`
-
-(Exact filenames may vary depending on the configured Cucumber plugins.)
+- HTML: `target/cucumber-report.html`
+- JSON: `target/cucumber-report.json`
 
 ## Example commands (copy/paste)
 
